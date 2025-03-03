@@ -1,5 +1,10 @@
 require_relative './spec_helper'
+require 'simplecov'
+SimpleCov.start
 require 'CSV'
+require './lib/stat_tracker'
+require './lib/season_statistics'
+locations = './data/game_teams.csv'
 
 RSpec.configure do |config|
   config.formatter = :documentation
@@ -7,30 +12,31 @@ end
 
 CSV.foreach(StatTracker.from_csv(locations))
 
-RSpec.describe Season_statistics
+RSpec.describe 'Season_Statistics'
 
 describe '#initialize' do
-  it 'exisits' do
-    expec(@Season_statistics).to be_an_instance(Season_statistics)
+  it 'exists' do
+  @season_statistics = SeasonStatistics.new
+  expect(@season_statistics).to be_an_instance_of(SeasonStatistics)
   end
 end
 describe '#attributes' do
-    it '#winningest_coach' do
+    xit '#winningest_coach' do
       expect().to
     end
-    it 'worst_coach' do
+    xit 'worst_coach' do
       expect().to
     end
-    it 'most_accurate_team' do
+    xit 'most_accurate_team' do
       expect().to
     end
-    it 'least_accurate_team' do
+    xit 'least_accurate_team' do
       expect().to
     end
-    it 'most_tackles' do
+    xit 'most_tackles' do
       expect().to
     end
-    it 'fewest_tackles' do
+    xit 'fewest_tackles' do
       expect().to
     end
 end  
