@@ -1,4 +1,3 @@
-require_relative './spec_helper'
 require 'simplecov'
 SimpleCov.start
 require 'CSV'
