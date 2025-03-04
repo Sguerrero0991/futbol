@@ -1,9 +1,10 @@
 require 'CSV'
 class StatTracker
-  def initialize(games,teams,game_teams)
-    @games = games
-    @teams = teams
-    @game_teams = game_teams
+  attr_reader :games, :teams, :game_teams
+  def initialize(locations)
+    @games = locations[:games]
+    @teams = locations[:teams]
+    @game_teams = locations[:game_teams]
   end
   def self.from_csv(locations)
     # Read each CSV file using the correct paths
@@ -11,8 +12,11 @@ class StatTracker
     teams = CSV.read(locations[:teams], headers: true, header_converters: :symbol)
     game_teams = CSV.read(locations[:game_teams], headers: true, header_converters: :symbol)
     # Create a new instance of StatTracker
-    stat_tracker = StatTracker.new(games, teams, game_teams)
+    stat_tracker = StatTracker.new(locations)
     # Return the instance
+    # binding.pry 
     return stat_tracker
   end
+
+  
 end
