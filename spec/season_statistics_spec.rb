@@ -1,6 +1,6 @@
 require 'simplecov'
 SimpleCov.start
-require 'CSV'
+#require 'CSV'
 require './lib/stat_tracker'
 require './lib/season_statistics'
 locations = './data/game_teams.csv'
@@ -8,8 +8,6 @@ locations = './data/game_teams.csv'
 RSpec.configure do |config|
   config.formatter = :documentation
 end
-
-CSV.foreach(StatTracker.from_csv(locations))
 
 RSpec.describe 'Season_Statistics'
 

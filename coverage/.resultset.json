@@ -1,0 +1,46 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/home/calvin/Mod1/group2/futbol/lib/game_statistics.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/calvin/Mod1/group2/futbol/lib/stat_tracker.rb": {
+        "lines": [
+          1,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1741056589
+  }
+}
