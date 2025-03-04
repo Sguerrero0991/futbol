@@ -9,8 +9,6 @@ RSpec.configure do |config|
   config.formatter = :documentation
 end
 
-CSV.foreach(StatTracker.from_csv(locations))
-
 RSpec.describe 'Season_Statistics'
 
 describe '#initialize' do
