@@ -5,6 +5,7 @@ class StatTracker
     @games = locations[:games]
     @teams = locations[:teams]
     @game_teams = locations[:game_teams]
+    # binding.pry
   end
   def self.from_csv(locations)
     # Read each CSV file using the correct paths
@@ -17,6 +18,4 @@ class StatTracker
     # binding.pry 
     return stat_tracker
   end
-
-  
 end
