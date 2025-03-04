@@ -1,7 +1,9 @@
 require 'CSV'
 class StatTracker
-  def initialize()
-
+  def initialize(games,teams,game_teams)
+    @games = games
+    @teams = teams
+    @game_teams = game_teams
   end
   def self.from_csv(locations)
     # Read each CSV file using the correct paths
@@ -11,6 +13,7 @@ class StatTracker
     # Create a new instance of StatTracker
     stat_tracker = StatTracker.new(games, teams, game_teams)
     # Return the instance
+    puts games
     return stat_tracker
   end
 end
