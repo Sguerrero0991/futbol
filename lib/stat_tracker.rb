@@ -8,6 +8,7 @@ class StatTracker
     # binding.pry
   end
   def self.from_csv(locations)
+    puts "Locations Hash: #{locations.inspect}"
     # Read each CSV file using the correct paths
     games = CSV.read(locations[:games], headers: true, header_converters: :symbol)
     teams = CSV.read(locations[:teams], headers: true, header_converters: :symbol)
