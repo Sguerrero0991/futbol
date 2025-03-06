@@ -22,27 +22,25 @@ RSpec.describe StatTracker do
     expect(@stat_tracker).to be_an_instance_of(StatTracker)
   end
 
-  it 'stores a file path of games in a hash' do
-    expect(@stat_tracker.games).to eq(@games_path)
+  it 'stores csv data in and array of hashs' do
+    expect(@stat_tracker.games).to be_an(Array)
+    expect(@stat_tracker.teams).to be_an(Array)
+    expect(@stat_tracker.game_teams).to be_an(Array)
+
+    expect(@stat_tracker.games.first).to be_a(Hash)
+    expect(@stat_tracker.teams.first).to be_a(Hash)
+    expect(@stat_tracker.game_teams.first).to be_a(Hash)
   end 
 
-  it 'stores a file path of teams in a hash' do
-    expect(@stat_tracker.teams).to eq(@team_path)
-  end 
+  it 'has correct keys in game data' do
+    expect(@stat_tracker.games.first.keys).to include(:game_id, :season, :home_team_id, :away_team_id)
+  end
 
-  it 'stores a file path of game_teams in a hash' do
-    expect(@stat_tracker.game_teams).to eq(@game_teams_path)
-  end 
+  it 'has correct keys in team data' do
+    expect(@stat_tracker.teams.first.keys).to include(:team_id, :teamname)
+  end
 
-  describe 'from_csv' do
-    it 'reads the correct CSV files' do
-      # Now @locations and @games_path are properly set in before(:each)
-      stat_tracker = StatTracker.from_csv(@locations)
-
-      games = CSV.read(@games_path, headers: true, header_converters: :symbol)
-
-      expect(games).not_to be_empty
-      expect(games.headers).to include(:game_id, :season, :home_team_id)
-    end
+  it 'has correct keys in game_teams data' do
+    expect(@stat_tracker.game_teams.first.keys).to include(:game_id, :team_id, :hoa)
   end
 end
