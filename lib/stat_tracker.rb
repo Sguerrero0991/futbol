@@ -1,6 +1,8 @@
 require 'CSV'
 require 'pry'
-# require './lib/games'
+require_relative './games'
+require_relative './team'
+require_relative './game_teams'
 class StatTracker
   attr_reader :games, :teams, :game_teams
   def initialize(games, teams, game_teams)
