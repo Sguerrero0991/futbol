@@ -1,12 +1,15 @@
 require 'CSV'
+require 'pry'
+require './lib/games'
 class StatTracker
   attr_reader :games, :teams, :game_teams
   def initialize(locations)
     @games = locations[:games]
     @teams = locations[:teams]
     @game_teams = locations[:game_teams]
-    # binding.pry
+    
   end
+ 
   def self.from_csv(locations)
     puts "Locations Hash: #{locations.inspect}"
     # Read each CSV file using the correct paths
@@ -18,5 +21,7 @@ class StatTracker
     # Return the instance
     # binding.pry 
     return stat_tracker
+    
   end
+  # binding.pry
 end
