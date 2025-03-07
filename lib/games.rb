@@ -1,6 +1,6 @@
 require 'csv'
 require 'pry'
-require './lib/stat_tracker'
+require_relative './stat_tracker'
 class Games
   attr_reader   :game_id,
                 :season,
@@ -23,7 +23,8 @@ class Games
       @home_goals = games_data[:home_goals].to_i
       @venue = games_data[:venue]
       @venue_link = games_data[:venue_link]
- end
+    end
+
 end
 
   

@@ -29,16 +29,40 @@ class StatTracker
     # Return the instance
   end
   
-  def highest_total_score 
-    games = StatTracker.new(games)
-    games.map do |game| 
-      game[:home_goals] + game[:away_goals].max
-      
+  def highest_total_score
+    @games.map { |game| game.home_goals.to_i + game.away_goals.to_i }.max
+  end
+
+  def lowest_total_score
+    @games.map {|game| game.home_goals + game.away_goals }.min
+  end
+
+  def percentage_home_wins
+    total_games = @games.length.to_f
+    home_wins = @games.count { |game| game.home_goals.to_i > game.away_goals.to_i }
+  
+    (home_wins / total_games).round(2)
+  end
+
+  def percentage_visitor_wins
+    total_games = @games.length.to_f
+    away_wins = @games.count {|game| game.home_goals.to_i < game.away_goals.to_i}
+
+    (away_wins / total_games).round(2)
+  end
+
+  def percentage_ties
+    total_games = @games.length.to_f
+    ties = @games.count {|game| game.home_goals.to_i == game.away_goals.to_i}
+
+    (ties / total_games).round(2)
+  end
+
+  def count_of_games_by_season
+    hash = {}
+    @games.each do |season|
+      hash[:season] = []
+      @games.count
     end
-    puts "#{stat_tracker.highest_total_score}"
-    binding.pry
-    #We need this method to, locate both away and home goals, [:away_goals] and [:homes goals]
-    #add the sum of the two keys, 
-    #and return the highest combination that the method finds in the CSV files
   end
 end
