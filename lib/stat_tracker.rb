@@ -1,4 +1,4 @@
-require 'CSV'
+require 'csv'
 require 'pry'
 require_relative './games'
 require_relative './teams'
@@ -61,6 +61,101 @@ class StatTracker
    
   end
   
+
+  # def count_of_games_by_season
+  #   hash = {}
+  #   @games.each do |season|
+  #     hash[:season] = []
+  #     @games.count
+  #   end
+  # end
+  
+  def highest_scoring_visitor
+      #1: Filter game_teams to only include away games
+      away_games = @game_teams.select { |game_team| game_team.hoa == 'away' }
+    
+      #2: Group away_games by team_id
+      away_teams = away_games.group_by { |game_team| game_team.team_id }
+  
+      #3: Calculate the average goals for each team
+      team_averages = away_teams.map do |team_id, games|
+        total_goals = games.sum { |game| game.goals.to_i }
+          average_goals = total_goals.to_f / games.size
+            [team_id, average_goals]
+      end
+    
+      #4: Find the team with the highest average goals
+      highest_avg_team_id = team_averages.max_by { |team_id, avg| avg }[0]
+    
+      #5: Find the team name by team_id
+      team = @teams.find { |team| team.team_id == highest_avg_team_id }
+      team.team_name
+  end
+
+  def highest_scoring_home_team
+      #1: Filter game_teams to only include home games 
+      home_games = @game_teams.select { |game_team| game_team.hoa == 'home' }
+
+      #2: Group home_games by team_id
+      home_teams = home_games.group_by { |game_team| game_team.team_id }
+
+      #3: Calculate the average goals for each team
+      team_averages = home_teams.map do |team_id, games|
+        total_goals = games.sum { |game| game.goals.to_i }
+          average_goals = total_goals.to_f / games.size
+          [team_id, average_goals]
+      end
+
+      #4: Find the team with the highest average goals
+      highest_avg_team_id = team_averages.max_by { |team_id, avg| avg }[0]
+
+      #5: Find the team name by team_id
+      team = @teams.find { |team| team.team_id == highest_avg_team_id }
+      team.team_name
+  end
+
+  def lowest_scoring_visitor
+      #1: Filter game_teams to only include away games
+      away_games = @game_teams.select { |game_team| game_team.hoa == 'away' }
+
+      #2: Group away_games by team_id
+      away_teams = away_games.group_by { |game_team| game_team.team_id }
+
+      #3: Calculate the average goals for each team
+      team_averages = away_teams.map do |team_id, games|
+        total_goals = games.sum { |game| game.goals.to_i }
+          average_goals = total_goals.to_f / games.size
+            [team_id, average_goals]
+      end
+      
+      #4: Find the team with the lowest average goals
+      lowest_avg_team_id = team_averages.min_by { |team_id, avg| avg }[0]
+
+      #5: Find the team name by team_id
+      team = @teams.find { |team| team.team_id == lowest_avg_team_id }
+      team.team_name
+  end
+
+  def lowest_scoring_home_team
+      #1: Filter game_teams to only include home games
+      home_games = @game_teams.select { |game_team| game_team.hoa == 'home' }
+
+      #2: Group home_games by team_id
+      home_teams = home_games.group_by { |game_team| game_team.team_id }
+
+      #3: Calculate the average goals for each team
+      team_averages = home_teams.map do |team_id, games|
+        total_goals = games.sum { |game| game.goals.to_i }
+          average_goals = total_goals.to_f / games.size
+            [team_id, average_goals]
+      end
+
+      #4: Find the team with the lowest average goals
+      lowest_avg_team_id = team_averages.min_by { |team_id, avg| avg }[0]
+      
+      #5: Find the team name by team_id
+      team = @teams.find { |team| team.team_id == lowest_avg_team_id }
+      team.team_name
   def count_of_games_by_season
     #create a hash to store season counts
     season_counts = Hash.new(0) #will ensure that any new season gets a default value of 0.
@@ -99,6 +194,7 @@ class StatTracker
     end
   
     average_goals
+
   end
   
 end
