@@ -122,24 +122,12 @@ class StatTracker
   end
 
   def worst_offense
-    team_goals = Hash.new(0)
-    @games.each do |game|
-      home_team_id = game.home_team_id.to_s
-      away_team_id = game.away_team_id.to_s
-      home_goals = game.home_goals.to_i
-      away_goals = game.away_goals.to_i
-      team_goals[home_team_id] += home_goals
-      team_goals[away_team_id] += away_goals
-    end
+    worst_team = @teams.min_by { |team| average_goals_per_game_for_team(team) }
 
-    # team_goals.each do |team_id, goals|
+    return "No team found" if worst_team.nil? # Edge case handling
 
-    # end
-
-    worst_team_id = team_goals.min_by { |team_id, goals| goals }[0]
-    worst_team = @teams.find { |team| team.team_id == worst_team_id }
     worst_team.team_name
-  end 
+  end
 
   def highest_scoring_visitor
     #1: Filter game_teams to only include away games
