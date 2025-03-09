@@ -14,6 +14,7 @@ locations = {
 }
 
 stat_tracker = StatTracker.from_csv(locations)
+# binding.pry
 
 puts stat_tracker.highest_total_score
 puts stat_tracker.lowest_total_score
@@ -25,3 +26,4 @@ puts stat_tracker.highest_scoring_visitor
 puts stat_tracker.highest_scoring_home_team
 puts stat_tracker.lowest_scoring_visitor
 puts stat_tracker.lowest_scoring_home_team
+

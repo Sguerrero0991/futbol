@@ -7,7 +7,6 @@ class Teams
               :abbreviation,
               :stadium,
               :link
-
   def initialize(team_data)
     @team_id = team_data[:team_id].to_i
     @franchise_id = team_data[:franchiseid].to_i
@@ -41,5 +40,4 @@ class Teams
     @link
   end
 end
-
 
