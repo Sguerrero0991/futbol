@@ -21,7 +21,12 @@ puts stat_tracker.lowest_total_score
 puts stat_tracker.percentage_home_wins
 puts stat_tracker.percentage_visitor_wins
 puts stat_tracker.percentage_ties
-# puts stat_tracker.count_of_games_by_season
+puts stat_tracker.count_of_games_by_season
+puts stat_tracker.average_goals_per_game
+puts stat_tracker.average_goals_by_season
+puts stat_tracker.count_of_teams
+puts stat_tracker.best_offense
+puts stat_tracker.worst_offense
 puts stat_tracker.highest_scoring_visitor
 puts stat_tracker.highest_scoring_home_team
 puts stat_tracker.lowest_scoring_visitor
@@ -38,5 +43,3 @@ puts stat_tracker.most_tackles("20132014")
 puts stat_tracker.most_tackles("20142015")
 puts stat_tracker.fewest_tackles("20132014")
 puts stat_tracker.fewest_tackles("20142015")
-puts "Best team ID: #{best_team_id}"
-puts "Best team: #{best_team.inspect}"

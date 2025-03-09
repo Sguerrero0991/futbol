@@ -143,7 +143,6 @@ class StatTracker
           [team_id, average_goals]
     end
 
-
     #4: Find the team with the highest average goals
     highest_avg_team_id = team_averages.max_by { |team_id, avg| avg }[0]
 
