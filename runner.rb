@@ -38,3 +38,5 @@ puts stat_tracker.most_tackles("20132014")
 puts stat_tracker.most_tackles("20142015")
 puts stat_tracker.fewest_tackles("20132014")
 puts stat_tracker.fewest_tackles("20142015")
+puts "Best team ID: #{best_team_id}"
+puts "Best team: #{best_team.inspect}"

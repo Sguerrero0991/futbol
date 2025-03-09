@@ -65,34 +65,3 @@ class Games
       @venue_link
     end
 end
-
-  
-
-  
-  #     binding.pry
- 
-#   # def self.from_csv(games_data)
-#   #   games = CSV.foreach(locations[:games], headers: true, header_converters: :symbol)
-#   # end
-#   # binding.pry
-  
-#   def self.from_csv(file_path)
-#     games = []
-    
-#     CSV.foreach(file_path, headers: true, header_converters: :symbol) do |row|
-#       games << Games.new(row)  # Create a Games object for each row
-#     end
-   
-#     games  # Return an array of Games objects
-  
-#   end
-#   # def 
-#   #   stat_tracker = StatTracker.new(locations)
-#   # end 
-
-#   # def highest_total_score
-
-#   # end 
-    
-#   #   Highest sum of the winning and losing teams’ scores	Integer
-# end

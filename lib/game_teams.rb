@@ -1,5 +1,6 @@
 require 'csv'
 require 'pry'
+class GameTeams
   attr_reader :game_id,
               :team_id,
               :HoA,
