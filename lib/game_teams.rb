@@ -1,6 +1,5 @@
 require 'csv'
 require 'pry'
-class GameTeams
   attr_reader :game_id,
               :team_id,
               :HoA,
@@ -16,10 +15,11 @@ class GameTeams
               :faceOffWinPercentage,
               :giveaways,
               :takeaways
+
   def initialize(data)
       @game_id = data[:game_id].to_i
       @team_id = data[:team_id].to_i
-      @HoA =  data[:HoA]
+      @hoa =  data[:hoa]
       @result = data[:result]
       @settled_in = data[:settled_in]
       @head_coach = data[:head_coach]
@@ -33,4 +33,65 @@ class GameTeams
       @giveaways = data[:giveaways].to_i
       @takeaways = data[:takeaways].to_i
   end
+
+  def game_id
+    @game_id
+  end
+
+  def team_id
+    @team_id
+  end
+
+  def hoa
+    @hoa
+  end
+
+  def result
+    @result
+  end
+
+  def settled_in
+    @settled_in
+  end
+
+  def head_coach
+    @head_coach
+  end
+
+  def goals
+    @goals
+  end
+
+  def shots
+    @shots
+  end
+  
+  def tackles
+    @tackles
+  end
+
+  def pim
+    @pim
+  end
+
+  def powerPlayOpportunities
+    @powerPlayOpportunities
+  end
+
+  def powerPlayGoals
+    @powerPlayGoals
+  end
+
+  def faceOffWinPercentage
+    @faceOffWinPercentage 
+  end
+
+  def giveaways
+    @giveaways
+  end
+
+  def takeaways
+    @takeaways
+  end
 end
+
