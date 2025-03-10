@@ -1,6 +1,6 @@
 # Futbol
 
-Starter repository for the [Turing School](https://turing.edu/) Futbol project.
+## Starter repository for the [Turing School](https://turing.edu/) Futbol project.
 
 A 1-2 summary or bullet points outlining your plan for check-ins throughout the duration of the project.
 - Our plan is to check in every time we are working live together, and then check in daily over slack over anything that has been delegated to individual team members, to see if team members need help, etc.  
@@ -21,7 +21,21 @@ DTR link (03/01/25): https://docs.google.com/document/d/1uXuj9uCI3ccTMwBftRqgg_a
 If you do additional DTRs later in the project, you should link the revised versions here as well with the date. New versions should be listed alongside older versions. Do not delete old DTRs.
 
 # Contributers: 
-Brad: LinkedIn: GitHub: https://github.com/bblair321
-Steph: LinkedIn: GitHub: https://github.com/Sguerrero0991
-Calvin: LinkedIn: GitHub: https://github.com/cdsuit00 
+Brad: [GitHub:] (https://github.com/bblair321)
+Steph: [GitHub:] (https://github.com/Sguerrero0991)
+Calvin: [GitHub:] (https://github.com/cdsuit00)
 List each group member’s name and link to their LinkedIn and Github profiles.
+
+# Retro Deliverables:
+The name of and links (if applicable) to any tools you used for retro:
+[EasyRetro: Link](https://easyretro.io/publicboard/4oggt1E7q5N6ZDarFnRl7rbau2g1/a074c70f-722d-4dc6-8923-0b50e1995690)
+Slack Huddle for meeting 
+Top 3 things that went well during your project
+1. We got to enjoy some interpersonal time as well and were able to bond through the project.
+2. We were able to work together well. It was easy to work with everyone in the group and we didn't have any conflicts show up.
+3. Everyone held themselves accountable and contributed evenly to group and individual tasks.
+
+Top 3 things your team would do differently next time
+1. I think the only thing we really had a hard time with was getting the csv reader to work. So maybe more practice with CSV stuff would be handy.
+2. We could go back and try and refractor some of this code to be more clean and concise.
+3. Get more familiar with Spec Harness.
