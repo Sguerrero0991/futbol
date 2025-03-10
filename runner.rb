@@ -16,11 +16,12 @@ locations = {
 stat_tracker = StatTracker.from_csv(locations)
 # binding.pry
 
-puts stat_tracker.highest_total_score
-puts stat_tracker.lowest_total_score
-puts stat_tracker.percentage_home_wins
-puts stat_tracker.percentage_visitor_wins
-puts stat_tracker.percentage_ties
+
+puts "Highest Total Score: #{stat_tracker.highest_total_score}"
+puts "Lowest Total Score: #{stat_tracker.lowest_total_score}"
+puts "Percentage Home Wins: #{stat_tracker.percentage_home_wins}"
+puts "Percentage Visitor Wins: #{stat_tracker.percentage_visitor_wins}"
+puts "Percentage Ties: #{stat_tracker.percentage_ties}"
 puts stat_tracker.count_of_games_by_season
 puts stat_tracker.average_goals_per_game
 puts stat_tracker.average_goals_by_season
