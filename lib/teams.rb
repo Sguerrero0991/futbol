@@ -15,29 +15,5 @@ class Teams
     @stadium = team_data[:stadium]
     @link = team_data[:link]
   end
-
-  def team_id
-    @team_id
-  end
-
-  def franchise_id
-    @franchise_id
-  end
-
-  def team_name
-    @team_name
-  end
-
-  def abbreviation
-    @abbreviation
-  end
-
-  def stadium
-    @stadium
-  end
-
-  def link
-    @link
-  end
 end
 

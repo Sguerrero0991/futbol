@@ -24,44 +24,4 @@ class Games
       @venue = games_data[:venue]
       @venue_link = games_data[:venue_link]
     end
-
-    def game_id
-      @game_id
-    end
-
-    def season
-      @season
-    end
-
-    def type
-      @type
-    end
-
-    def date_time
-      @date_time
-    end
-
-    def away_team_id
-      @away_team_id
-    end
-
-    def home_team_id
-      @home_team_id
-    end
-
-    def away_goals
-      @away_goals
-    end
-
-    def home_goals
-      @home_goals
-    end
-
-    def venue
-      @venue
-    end
-    
-    def venue_link
-      @venue_link
-    end
 end
